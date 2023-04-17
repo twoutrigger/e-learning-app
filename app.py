@@ -18,7 +18,17 @@ def create_app():
     
     @app.get("/subjects")
     def subjects():
-        return render_template("subjects.html")
+
+        entries_subjects = [
+            (
+                entry["subject_name"],
+                 entry["subject_desc"],
+                entry["subject_url"]
+            )
+            for entry in app.db.subjects.find({})
+        ]
+
+        return render_template("subjects.html", entries_subjects=entries_subjects)
     
     @app.get("/course/<course_name>")
     def course():
