@@ -31,11 +31,11 @@ def create_app():
         return render_template("subjects.html", entries_subjects=entries_subjects)
     
     @app.get("/course/<course_name>")
-    def course():
+    def course(course_name):
         return render_template("course.html")
     
     @app.get("/video/<course_name>/<video_num>")
-    def video():
+    def video(course_name, video_num):
         return render_template("video.html")
     
     return app
