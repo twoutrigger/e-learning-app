@@ -56,6 +56,18 @@ body {
   padding: 0 20px;
 }
 
+.text__header {
+
+}
+
+.text__paragraph {
+
+}
+
+.button__submit {
+  
+}
+
 .form {
   display: flex;
   flex-direction: column;
