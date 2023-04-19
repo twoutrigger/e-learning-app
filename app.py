@@ -6,7 +6,7 @@ def create_app():
     app = Flask(__name__)
     # client = MongoClient(config.mongo_creds)
     client = MongoClient()
-    app.db = client.user_data_appe_learning_app
+    app.db = client.e_learning_app
 
     @app.get("/")
     def home():
@@ -32,10 +32,28 @@ def create_app():
     
     @app.get("/course/<course_name>")
     def course(course_name):
-        return render_template("course.html")
+
+        course_name = 'placeholder'
+        course_desc = 'placeholder'
+
+        video_list = [
+            (
+                entry["video_num"],
+                entry["video_name"],
+                entry["video_len"],
+                entry["video_url"]
+            )
+            # need to filter for course
+            for entry in app.db.videos.find({})
+        ]
+
+        return render_template("course.html", course_name=course_name, course_desc=course_desc, video_list=video_list)
     
     @app.get("/video/<course_name>/<video_num>")
     def video(course_name, video_num):
-        return render_template("video.html")
+
+        video_name = 'placeholder'
+        video_desc = 'placeholder'
+        return render_template("video.html", video_name=video_name, video_desc=video_desc)
     
     return app
