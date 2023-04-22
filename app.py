@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_restful import Api
 from models.subjects import SubjectsModel
+from models.video import VideoModel
 from flask_sqlalchemy import SQLAlchemy
 import config
 import os
@@ -18,28 +19,6 @@ app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # app.secret_key = ''
 # api = Api(app)
-
-db = SQLAlchemy(app)
-
-class SubjectsModel(db.Model):
-    __tablename__ = 'subjects'
-
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
-    desc = db.Column(db.String(240))
-    url = db.Column(db.String(80))
-
-    def __init__(self, name, desc, url):
-        self.name = name
-        self.desc = desc
-        self.url = url
-
-    def save_to_db(self):
-        db.session.add(self)
-        db.session.commit()
-
-    def __repr__(self):
-        return f'<Subject {self.name}>'
 
 @app.get("/")
 def home():
@@ -91,10 +70,26 @@ def course(course_name):
 @app.get("/video/<course_name>/<video_num>")
 def video(course_name, video_num):
 
+    video = VideoModel.query.all()
+
+    entries_subjects = [
+        (
+            entry.name,
+            entry.desc,
+            entry.url,
+            entry.course_name,
+            entry.video_num
+        )
+        for entry in video
+    ]
+
+    print(entries_subjects)
+
     video_name = 'placeholder'
     video_desc = 'placeholder'
     return render_template("video.html", video_name=video_name, video_desc=video_desc)
     
+
 if __name__ == '__main__':
     from db import db
     db.init_app(app)

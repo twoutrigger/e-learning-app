@@ -7,4 +7,4 @@ Things to learn from this project:
 - How to display dynamic videos (multiple videos for each course)
 - How to store and retrieve different entities from SQLite
 
-To run this app, use the command "flask --debug run"
+To run this app, use the command "python app.py"
