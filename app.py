@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_restful import Api
+from models.subjects import SubjectsModel
+from flask_sqlalchemy import SQLAlchemy
 import config
 import os
 
@@ -17,6 +19,28 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # app.secret_key = ''
 # api = Api(app)
 
+db = SQLAlchemy(app)
+
+class SubjectsModel(db.Model):
+    __tablename__ = 'subjects'
+
+    id = db.Column(db.Integer, primary_key=True)
+    name = db.Column(db.String(80))
+    desc = db.Column(db.String(240))
+    url = db.Column(db.String(80))
+
+    def __init__(self, name, desc, url):
+        self.name = name
+        self.desc = desc
+        self.url = url
+
+    def save_to_db(self):
+        db.session.add(self)
+        db.session.commit()
+
+    def __repr__(self):
+        return f'<Subject {self.name}>'
+
 @app.get("/")
 def home():
     return render_template("home.html")
@@ -28,14 +52,18 @@ def about():
 @app.get("/subjects")
 def subjects():
 
-    entries_subjects = [
-        (
-            entry["subject_name"],
-            entry["subject_desc"],
-            entry["subject_url"]
-        )
-        for entry in app.db.subjects.find({})
-    ]
+    # entries_subjects = [
+    #     (
+    #         entry["subject_name"],
+    #         entry["subject_desc"],
+    #         entry["subject_url"]
+    #     )
+    #     for entry in app.db.subjects.find({})
+    # ]
+
+    # print(entries_subjects)
+
+    entries_subjects=[1,2,3]
 
     return render_template("subjects.html", entries_subjects=entries_subjects)
 

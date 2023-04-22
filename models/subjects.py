@@ -17,6 +17,9 @@ class SubjectsModel(db.Model):
         db.session.add(self)
         db.session.commit()
 
+    def __repr__(self):
+        return f'<Subject {self.name}>'
+
     @classmethod
     def find_by_subject_name(cls, name):
         return cls.query.filter_by(name=name).first()
