@@ -2,7 +2,6 @@ from flask import Flask, render_template, request, redirect, url_for
 from flask_restful import Api
 from models.subjects import SubjectsModel
 from models.video import VideoModel
-from flask_sqlalchemy import SQLAlchemy
 import config
 import os
 
@@ -32,6 +31,8 @@ def about():
 def subjects():
 
     subjects = SubjectsModel.query.all()
+
+    print(subjects)
 
     entries_subjects = [
         (
@@ -70,24 +71,13 @@ def course(course_name):
 @app.get("/video/<course_name>/<video_num>")
 def video(course_name, video_num):
 
-    video = VideoModel.query.all()
+    #change to .filter().first()
+    video = VideoModel.query.first()
 
-    entries_subjects = [
-        (
-            entry.name,
-            entry.desc,
-            entry.url,
-            entry.course_name,
-            entry.video_num
-        )
-        for entry in video
-    ]
-
-    print(entries_subjects)
-
-    video_name = 'placeholder'
-    video_desc = 'placeholder'
-    return render_template("video.html", video_name=video_name, video_desc=video_desc)
+    video_name = video.name
+    video_desc = video.desc
+    video_url = video.url
+    return render_template("video.html", video_name=video_name, video_desc=video_desc, video_url=video_url)
     
 
 if __name__ == '__main__':
