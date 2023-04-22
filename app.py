@@ -52,16 +52,18 @@ def about():
 @app.get("/subjects")
 def subjects():
 
-    # entries_subjects = [
-    #     (
-    #         entry["subject_name"],
-    #         entry["subject_desc"],
-    #         entry["subject_url"]
-    #     )
-    #     for entry in app.db.subjects.find({})
-    # ]
+    subjects = SubjectsModel.query.all()
 
-    # print(entries_subjects)
+    entries_subjects = [
+        (
+            entry.name,
+            entry.desc,
+            entry.url
+        )
+        for entry in subjects
+    ]
+
+    print(entries_subjects)
 
     entries_subjects=[1,2,3]
 
