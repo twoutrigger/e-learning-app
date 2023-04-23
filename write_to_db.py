@@ -1,4 +1,4 @@
-from  app import app
+from db import db
 from models.subjects import SubjectsModel
 from models.course import CourseModel
 
