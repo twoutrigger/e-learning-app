@@ -43,10 +43,6 @@ def subjects():
         for entry in subjects
     ]
 
-    print(entries_subjects)
-
-    entries_subjects=[1,2,3]
-
     return render_template("subjects.html", entries_subjects=entries_subjects)
 
 @app.get("/course/<course_name>")

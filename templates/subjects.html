@@ -1,3 +1,18 @@
 {% extends "base.html" %}
 
-{% block content %}{% endblock %}
+{% block content %}
+
+<div>
+    {% for subject in entries_subjects %}
+
+        <section>
+            <h1 class="text__header">{{ subject[0] }}</h1>
+            <!-- add photo in asset -->
+            <p class="text__paragraph">{{ subject[1] }}</p>
+            <hr class="solid">
+        </section>
+
+    {% endfor %}
+</div>
+
+{% endblock %}
