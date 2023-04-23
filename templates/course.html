@@ -10,7 +10,21 @@
 <div>
     <section>
         <h1 class="text__header">{{ course_name }}</h1>
+        <p class="text__paragraph">{{ course_desc }}</p>
+        <hr class="solid">
     </section>
+</div>
+<div>
+    {% for video in entries_videos %}
+
+    <section>
+        <h1 class="text__header">{{ video[0] }}</h1>
+        <!-- add photo in asset -->
+        <p class="text__paragraph">{{ video[1] }}</p>
+        <hr class="solid">
+    </section>
+
+    {% endfor %}
 </div>
 
 {% endblock %}

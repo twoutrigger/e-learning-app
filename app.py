@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_restful import Api
 from models.subjects import SubjectsModel
+from models.course import CourseModel
 from models.video import VideoModel
 import config
 import os
@@ -48,21 +49,23 @@ def subjects():
 @app.get("/course/<course_name>")
 def course(course_name):
 
-    course_name = 'placeholder'
-    course_desc = 'placeholder'
+    course = CourseModel.query.first()
 
-    video_list = [
+    course_name = course.name
+    course_desc = course.desc
+
+    videos = VideoModel.query.all()
+
+    entries_videos = [
         (
-            entry["video_num"],
-            entry["video_name"],
-            entry["video_len"],
-            entry["video_url"]
+            entry.name,
+            entry.desc,
+            entry.url
         )
-        # need to filter for course
-        for entry in app.db.videos.find({})
+        for entry in videos
     ]
 
-    return render_template("course.html", course_name=course_name, course_desc=course_desc, video_list=video_list)
+    return render_template("course.html", course_name=course_name, course_desc=course_desc, entries_videos=entries_videos)
 
 @app.get("/video/<course_name>/<video_num>")
 def video(course_name, video_num):
