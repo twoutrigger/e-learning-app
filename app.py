@@ -49,6 +49,9 @@ def subjects():
 @app.get("/course/<course_name>")
 def course(course_name):
 
+    # resource for dynamic url
+    # https://testdriven.io/tips/619b4748-dc9d-434a-9c11-1f09528a2039/
+
     course = CourseModel.query.first()
 
     course_name = course.name
