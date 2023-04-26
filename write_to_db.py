@@ -27,29 +27,29 @@ subject_3.save_to_db()
 
 # add courses; need to add relationship to Subject + update existing table
 course_1 = CourseModel(name='Looker',
-                       desc='Looker courses',
-                        #    subject_name = 'Business Intelligence',
-                       url='1')
+                    desc='Looker courses',
+                    subject_name = 'Business Intelligence',
+                    )
 course_2 = CourseModel(name='Tableau',
-                       desc='Tableau courses',
-                       #    subject_name = 'Business Intelligence',
-                       url='2')
+                    desc='Tableau courses',
+                    subject_name = 'Business Intelligence',
+                    )
 course_3 = CourseModel(name='Linear Regression',
-                       desc='Linear Regression courses',
-                       #    subject_name = 'Data Science',
-                       url='3')
+                    desc='Linear Regression courses',
+                    subject_name = 'Data Science',
+                    )
 course_4 = CourseModel(name='Logitic Regression',
-                       desc='Logistic Regression courses',
-                        #   subject_name = 'Data Science',
-                       url='4')
+                    desc='Logistic Regression courses',
+                    subject_name = 'Data Science',
+                    )
 course_5 = CourseModel(name='Airflow',
-                       desc='Airflow courses',
-                       #    subject_name = 'Data Engineering',
-                       url='5')
+                    desc='Airflow courses',
+                    subject_name = 'Data Engineering',
+                    )
 course_6 = CourseModel(name='S3 Bucket',
-                       desc='S3 Bucket courses',
-                       #    subject_name = 'Data Engineering',
-                       url='6')
+                    desc='S3 Bucket courses',
+                    subject_name = 'Data Engineering',
+                    )
 
 course_1.save_to_db()
 course_2.save_to_db()

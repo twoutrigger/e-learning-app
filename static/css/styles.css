@@ -131,7 +131,7 @@ body {
 }
 
 .form__submit {
-  background-color: #3cd0ff;
+  background-color: #175466;
   border: none;
   font-size: 18px;
   font-weight: bold;
@@ -142,7 +142,7 @@ body {
 }
 
 .form__submit:hover {
-  background-color: #18c1e1;
+  background-color: #175466;
 }
 
 .entry {
@@ -170,10 +170,10 @@ body {
 .footer {
   /* position: absolute; */
   /* bottom: 0; */
-  background-color: #323f43;
+  background-color: #175466;
   padding: 24px 0;
   margin-top: 50px;
-  border-top: 4px solid black;
+  /* border-top: 4px solid black; */
   color: white;
   font-size: 12px;
 }
