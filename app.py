@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from flask_restful import Api
-from models.subjects import SubjectsModel
+from models.subject import SubjectModel
 from models.course import CourseModel
 from models.video import VideoModel
 from flask_sqlalchemy import SQLAlchemy
@@ -34,15 +34,14 @@ def about():
 @app.get("/subjects")
 def subjects():
 
-    subjects = SubjectsModel.query.all()
+    subjects = SubjectModel.query.all()
 
     print(subjects)
 
     entries_subjects = [
         (
             entry.name,
-            entry.desc,
-            entry.url
+            entry.desc
         )
         for entry in subjects
     ]

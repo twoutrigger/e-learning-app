@@ -1,17 +1,17 @@
 from db import db
-from models.subjects import SubjectsModel
+from models.subject import SubjectModel
 from models.course import CourseModel
 
 # add subjects
-subject_1 = SubjectsModel(name='Business Intelligence',
-                       desc='Business intelligence courses',
-                       url='123')
-subject_2 = SubjectsModel(name='Data Science',
-                       desc='Data science courses',
-                       url='234')
-subject_3 = SubjectsModel(name='Data Engineering',
+subject_1 = SubjectModel(name='Business Intelligence',
+                    desc='Business intelligence courses',
+                    )
+subject_2 = SubjectModel(name='Data Science',
+                    desc='Data science courses',
+                    )
+subject_3 = SubjectModel(name='Data Engineering',
                        desc='Data engineering courses',
-                       url='345')
+                    )
 
 subject_1.save_to_db()
 subject_2.save_to_db()
