@@ -70,21 +70,24 @@ def course(course_name):
     # resource for dynamic url
     # https://testdriven.io/tips/619b4748-dc9d-434a-9c11-1f09528a2039/
 
-    course = CourseModel.query.first()
+    course = CourseModel.query.filter_by(name=course_name).first()
 
     course_name = course.name
     course_desc = course.desc
 
+    # need to write videos to db
     videos = VideoModel.query.all()
+    # videos = VideoModel.query.filter_by(course_name=course_name)
 
     entries_videos = [
         (
             entry.name,
-            entry.desc,
-            entry.url
+            entry.desc
         )
         for entry in videos
     ]
+
+    print(entries_videos)
 
     return render_template("course.html", course_name=course_name, course_desc=course_desc, entries_videos=entries_videos)
 
