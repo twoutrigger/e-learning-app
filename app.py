@@ -21,7 +21,8 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # app.secret_key = ''
 # api = Api(app)
 
-db = SQLAlchemy(app)
+## uncomment to add entries to db
+# db = SQLAlchemy(app)
 
 @app.get("/")
 def home():
@@ -47,6 +48,11 @@ def subjects():
     ]
 
     return render_template("subjects.html", entries_subjects=entries_subjects)
+
+@app.get("/subject/<subject_name>")
+def subject(subject_name):
+
+    return render_template("subject.html", subject_name=subject_name)
 
 @app.get("/course/<course_name>")
 def course(course_name):

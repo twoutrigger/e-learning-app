@@ -8,6 +8,7 @@
 
         <section>
             <h1 class="text__header">{{ subject[0] }}</h1>
+            <h2> <a href="{{ url_for('subject', subject_name=subject[0]) }}">{{ subject[0] }}</a> </h2>
             <!-- add photo in asset -->
             <p class="text__paragraph">{{ subject[1] }}</p>
             <hr class="solid">
