@@ -52,7 +52,17 @@ def subjects():
 @app.get("/subject/<subject_name>")
 def subject(subject_name):
 
-    return render_template("subject.html", subject_name=subject_name)
+    courses = CourseModel.query.filter_by(subject_name=subject_name)
+
+    entries_courses = [
+        (
+            entry.name,
+            entry.desc
+        )
+        for entry in courses
+    ]
+
+    return render_template("subject.html", subject_name=subject_name, entries_courses=entries_courses)
 
 @app.get("/course/<course_name>")
 def course(course_name):
