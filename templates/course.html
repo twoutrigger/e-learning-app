@@ -2,9 +2,6 @@
 
 {% block content %}
 
-<!-- need to pass video title and video length -->
-<!-- Video section headers can be added in V2 -->
-
 <div>
     <section>
         <h1 class="text__header">Videos for {{ course_name }}</h1>
@@ -15,7 +12,7 @@
     {% for video in entries_videos %}
 
     <section>
-        <h1 class="text__header">{{ video[0] }}</h1>
+        <h2 class="text__link"> <a href="{{ url_for('video', course_name=video[2], video_num=1) }}">{{ video[0] }}</a> </h2>
         <!-- add photo in asset -->
         <p class="text__paragraph">{{ video[1] }}</p>
         <hr class="solid">

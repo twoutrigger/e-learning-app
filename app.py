@@ -67,22 +67,18 @@ def subject(subject_name):
 @app.get("/course/<course_name>")
 def course(course_name):
 
-    # resource for dynamic url
-    # https://testdriven.io/tips/619b4748-dc9d-434a-9c11-1f09528a2039/
-
     course = CourseModel.query.filter_by(name=course_name).first()
 
     course_name = course.name
     course_desc = course.desc
 
-    # need to write videos to db
-    videos = VideoModel.query.all()
-    # videos = VideoModel.query.filter_by(course_name=course_name)
+    videos = VideoModel.query.filter_by(course_name=course_name)
 
     entries_videos = [
         (
             entry.name,
-            entry.desc
+            entry.desc,
+            entry.course_name
         )
         for entry in videos
     ]
@@ -94,8 +90,7 @@ def course(course_name):
 @app.get("/video/<course_name>/<video_num>")
 def video(course_name, video_num):
 
-    #change to .filter().first()
-    video = VideoModel.query.first()
+    video = VideoModel.query.filter_by(course_name=course_name, video_num=video_num).first()
 
     video_name = video.name
     video_desc = video.desc
