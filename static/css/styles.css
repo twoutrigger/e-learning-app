@@ -189,6 +189,10 @@ body {
   max-width: 240px;
 }
 
+.thematic__break {
+  color: #646b6e;
+}
+
 .footer {
   /* position: absolute; */
   /* bottom: 0; */
