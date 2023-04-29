@@ -85,51 +85,51 @@ video_4 = VideoModel(name='Tableau for Data Science and Data Visualization - Cra
                   video_num = 2,
                   url = 'https://www.youtube.com/embed/TPMlZxRRaBQ'
                   )
-video_5 = VideoModel(name='',
-                  desc='',
+video_5 = VideoModel(name='Linear Regression in 2 minutes',
+                  desc='Linear Regression in 2 minutes',
                   course_name = 'Linear Regression',
                   video_num = 1,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/CtsRRUddV2s'
                   )
-video_6 = VideoModel(name='',
-                  desc='',
+video_6 = VideoModel(name='Linear Regression, Clearly Explained!!!',
+                  desc='The concepts behind linear regression, fitting a line to data with least squares and R-squared, are pretty darn simple!',
                   course_name = 'Linear Regression',
                   video_num = 2,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/7ArmBVF2dCs'
                   )
-video_7 = VideoModel(name='',
-                  desc='',
-                  course_name = 'Logitic Regression',
+video_7 = VideoModel(name='Logistic Regression: An Introduction',
+                  desc='What is a logistic regression?',
+                  course_name = 'Logistic Regression',
                   video_num = 1,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/3tq4t41MsPc'
                   )
-video_8 = VideoModel(name='',
-                  desc='',
-                  course_name = 'Logitic Regression',
+video_8 = VideoModel(name='StatQuest: Logistic Regression',
+                  desc='Logistic regression is a traditional statistics technique that is also very popular as a machine learning tool.',
+                  course_name = 'Logistic Regression',
                   video_num = 2,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/yIYKR4sgzI8'
                   )
-video_9 = VideoModel(name='',
-                  desc='',
+video_9 = VideoModel(name='1. What is Apache Airflow? Airflow Beginners Tutorial',
+                  desc='Apache Airflow is one of the most powerful platforms used by Data Engineers for orchestrating workflows.',
                   course_name = 'Airflow',
                   video_num = 1,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/4aB1NE6qQzs'
                   )
-video_10 = VideoModel(name='',
-                  desc='',
+video_10 = VideoModel(name='Dynamic DAGs in Apache Airflow for Advanced',
+                  desc='Dynamic DAGs in Apache Airflow for beginners👍',
                   course_name = 'Airflow',
                   video_num = 2,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/6eHuOd96unQ'
                   )
-video_11 = VideoModel(name='',
-                  desc='',
+video_11 = VideoModel(name='Getting started with Amazon S3 - Demo',
+                  desc='In this demo, we learn how to create and configure S3 buckets.',
                   course_name = 'S3 Bucket',
                   video_num = 1,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/e6w9LwZJFIA'
                   )
-video_12 = VideoModel(name='',
-                  desc='',
+video_12 = VideoModel(name='All you need to know about encrypting AWS S3 buckets',
+                  desc='Learn how to enable S3 default encryption.',
                   course_name = 'S3 Bucket',
                   video_num = 2,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/SHWcTPcp8As'
                   )
