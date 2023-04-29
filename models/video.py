@@ -4,7 +4,7 @@ class VideoModel(db.Model):
     __tablename__ = 'video'
 
     id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(80))
+    name = db.Column(db.String(240))
     desc = db.Column(db.String(240))
     course_name = db.Column(db.String(80))
     video_num = db.Column(db.Integer)

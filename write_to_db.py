@@ -61,29 +61,29 @@ course_6.save_to_db()
 
 
 # add videos
-video_1 = VideoModel(name='',
-                  desc='',
+video_1 = VideoModel(name='Looker Studio in a minute',
+                  desc='Looker Studio helps make it easy for everyone to do self-service analytics and data visualization.',
                   course_name = 'Looker',
                   video_num = 1,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/ZBoFvaWr-Dk'
                   )
-video_2 = VideoModel(name='',
-                  desc='',
+video_2 = VideoModel(name='Look & Learn - Viewing dashboards',
+                  desc='In Looker, dashboards are collections of saved tiles representing individual data queries.',
                   course_name = 'Looker',
                   video_num = 2,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/mTlW_WDq2r4'
                   )
-video_3 = VideoModel(name='',
-                  desc='',
+video_3 = VideoModel(name='What is Tableau ? Explained in under 10 mins!',
+                  desc='In this video I summarise the Tableau platform and how it fits into the Analytical flow in every business.',
                   course_name = 'Tableau',
                   video_num = 1,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/7Jl-RwkzqQ4'
                   )
-video_4 = VideoModel(name='',
-                  desc='',
+video_4 = VideoModel(name='Tableau for Data Science and Data Visualization - Crash Course Tutorial',
+                  desc='Learn to use Tableau to produce high quality, interactive data visualizations!',
                   course_name = 'Tableau',
                   video_num = 2,
-                  url = ''
+                  url = 'https://www.youtube.com/embed/TPMlZxRRaBQ'
                   )
 video_5 = VideoModel(name='',
                   desc='',
