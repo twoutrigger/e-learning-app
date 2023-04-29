@@ -4,7 +4,7 @@
 
 <div>
     <section>
-        <h1 class="text__header">Courses for {{ subject_name }}</h1>
+        <h3 class="text__header">Courses for {{ subject_name }}</h3>
         <br>
     </section>
 </div>
@@ -13,8 +13,9 @@
 
     <section>
         <h2 class="text__link"> <a href="{{ url_for('course', course_name=course[0]) }}">{{ course[0] }}</a> </h2>
-        <p class="text__paragraph">{{ course[1] }}</p>
-        <hr class="solid">
+        <img class="image__thumbnail" src="/static/images/{{ course[0] }}.jpg" alt="{{ course[0] }} Image">
+        <p class="text__mini__link"> <a href="{{ url_for('course', course_name=course[0]) }}">Check out our {{ course[1] }}</a> </p>
+        <hr class="thematic__break">
     </section>
 
     {% endfor %}

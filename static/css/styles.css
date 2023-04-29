@@ -83,6 +83,16 @@ body {
   text-decoration: underline;
 }
 
+.text__mini__link a {
+  text-align: left;
+  color: #5c6b70;
+  text-decoration: underline;
+}
+
+.text__mini__link a:visited {
+  text-decoration: none;
+}
+
 .button__multichoice {
   max-width: 640px;
   margin: 0 auto;
@@ -186,7 +196,7 @@ body {
 }
 
 .image__thumbnail {
-  max-width: 240px;
+  max-height: 160px;
 }
 
 .thematic__break {
