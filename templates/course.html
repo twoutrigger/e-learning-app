@@ -12,7 +12,7 @@
     {% for video in entries_videos %}
 
     <section>
-        <h2 class="text__link"> <a href="{{ url_for('video', course_name=video[2], video_num=1) }}">{{ video[0] }}</a> </h2>
+        <h2 class="text__link"> <a href="{{ url_for('video', course_name=video[2], video_num=video[3]) }}">{{ video[0] }}</a> </h2>
         <!-- add photo in asset -->
         <p class="text__paragraph">{{ video[1] }}</p>
         <hr class="solid">

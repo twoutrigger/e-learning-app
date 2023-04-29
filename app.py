@@ -78,7 +78,8 @@ def course(course_name):
         (
             entry.name,
             entry.desc,
-            entry.course_name
+            entry.course_name,
+            entry.video_num
         )
         for entry in videos
     ]
