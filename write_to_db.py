@@ -64,60 +64,72 @@ course_6.save_to_db()
 video_1 = VideoModel(name='',
                   desc='',
                   course_name = 'Looker',
-                  video_num = 1
+                  video_num = 1,
+                  url = ''
                   )
 video_2 = VideoModel(name='',
                   desc='',
                   course_name = 'Looker',
-                  video_num = 2
+                  video_num = 2,
+                  url = ''
                   )
 video_3 = VideoModel(name='',
                   desc='',
                   course_name = 'Tableau',
-                  video_num = 1
+                  video_num = 1,
+                  url = ''
                   )
 video_4 = VideoModel(name='',
                   desc='',
                   course_name = 'Tableau',
-                  video_num = 2
+                  video_num = 2,
+                  url = ''
                   )
 video_5 = VideoModel(name='',
                   desc='',
                   course_name = 'Linear Regression',
-                  video_num = 1
+                  video_num = 1,
+                  url = ''
                   )
 video_6 = VideoModel(name='',
                   desc='',
                   course_name = 'Linear Regression',
-                  video_num = 2
+                  video_num = 2,
+                  url = ''
                   )
 video_7 = VideoModel(name='',
                   desc='',
                   course_name = 'Logitic Regression',
-                  video_num = 1
+                  video_num = 1,
+                  url = ''
                   )
 video_8 = VideoModel(name='',
                   desc='',
                   course_name = 'Logitic Regression',
-                  video_num = 2
+                  video_num = 2,
+                  url = ''
                   )
 video_9 = VideoModel(name='',
                   desc='',
                   course_name = 'Airflow',
-                  video_num = 1
+                  video_num = 1,
+                  url = ''
                   )
 video_10 = VideoModel(name='',
                   desc='',
                   course_name = 'Airflow',
-                  video_num = 2
+                  video_num = 2,
+                  url = ''
                   )
 video_11 = VideoModel(name='',
                   desc='',
                   course_name = 'S3 Bucket',
-                  video_num = 1
+                  video_num = 1,
+                  url = ''
                   )
 video_12 = VideoModel(name='',
                   desc='',
                   course_name = 'S3 Bucket',
-                  video_num = 2
+                  video_num = 2,
+                  url = ''
                   )

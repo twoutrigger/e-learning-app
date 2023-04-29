@@ -8,12 +8,14 @@ class VideoModel(db.Model):
     desc = db.Column(db.String(240))
     course_name = db.Column(db.String(80))
     video_num = db.Column(db.Integer)
+    url = db.Column(db.String(80))
 
-    def __init__(self, name, desc, course_name, video_num):
+    def __init__(self, name, desc, course_name, video_num, url):
         self.name = name
         self.desc = desc
         self.course_name = course_name
         self.video_num = video_num
+        self.url = url
 
     def save_to_db(self):
         db.session.add(self)
