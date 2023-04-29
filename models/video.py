@@ -6,14 +6,12 @@ class VideoModel(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(80))
     desc = db.Column(db.String(240))
-    url = db.Column(db.String(80))
     course_name = db.Column(db.String(80))
     video_num = db.Column(db.Integer)
 
-    def __init__(self, name, desc, url, course_name, video_num):
+    def __init__(self, name, desc, course_name, video_num):
         self.name = name
         self.desc = desc
-        self.url = url
         self.course_name = course_name
         self.video_num = video_num
 

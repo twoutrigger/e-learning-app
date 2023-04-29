@@ -1,6 +1,7 @@
 from db import db
 from models.subject import SubjectModel
 from models.course import CourseModel
+from models.video import VideoModel
 
 # add subjects
 subject_1 = SubjectModel(name='Business Intelligence',
@@ -57,3 +58,66 @@ course_3.save_to_db()
 course_4.save_to_db()
 course_5.save_to_db()
 course_6.save_to_db()
+
+
+# add videos
+video_1 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Looker',
+                  video_num = 1
+                  )
+video_2 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Looker',
+                  video_num = 2
+                  )
+video_3 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Tableau',
+                  video_num = 1
+                  )
+video_4 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Tableau',
+                  video_num = 2
+                  )
+video_5 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Linear Regression',
+                  video_num = 1
+                  )
+video_6 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Linear Regression',
+                  video_num = 2
+                  )
+video_7 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Logitic Regression',
+                  video_num = 1
+                  )
+video_8 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Logitic Regression',
+                  video_num = 2
+                  )
+video_9 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Airflow',
+                  video_num = 1
+                  )
+video_10 = VideoModel(name='',
+                  desc='',
+                  course_name = 'Airflow',
+                  video_num = 2
+                  )
+video_11 = VideoModel(name='',
+                  desc='',
+                  course_name = 'S3 Bucket',
+                  video_num = 1
+                  )
+video_12 = VideoModel(name='',
+                  desc='',
+                  course_name = 'S3 Bucket',
+                  video_num = 2
+                  )
