@@ -181,8 +181,12 @@ body {
   line-height: 150%;
 }
 
-.home_image {
+.image__home {
   max-width: 640px;
+}
+
+.image__thumbnail {
+  max-width: 240px;
 }
 
 .footer {
