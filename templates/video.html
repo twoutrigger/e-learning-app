@@ -2,32 +2,27 @@
 
 {% block content %}
 
-<!-- need to pass title -->
-<!-- need to pass video description -->
-<!-- need to pass video url and display -->
-<!-- need to add buttons for previous / next videos -->
-
 <div>
     <section>
-        <h1 class="text__header">{{ video_name }}</h1>
+        <h3 class="text__header">{{ video_name }}</h3>
     </section>
     <section>
-        <!-- fixed using /embed -->
         <iframe width="560" height="315" src={{ video_url }} frameborder="0" allowfullscreen></iframe>
     </section>
     <section>
         <p class="text__paragraph">{{ video_desc }}</p>
         <br>
+        <br>
     </section>
     <div class="button__multichoice">
         <section class="left">
             <form class="form" method="POST">
-                <button class="button__submit" type="submit" name="submit_previous" value="previous">Previous Video</button>
+                <button class="button__submit" type="submit" name="submit_paginate" value="previous">Previous Video</button>
             </form>
         </section>
         <section class="right">
             <form class="form" method="POST">
-                <button class="button__submit" type="submit" name="submit_next" value="next">Next Video</button>
+                <button class="button__submit" type="submit" name="submit_paginate" value="next">Next Video</button>
             </form>
         </section>
     </div>

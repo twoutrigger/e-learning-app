@@ -37,8 +37,6 @@ def subjects():
 
     subjects = SubjectModel.query.all()
 
-    print(subjects)
-
     entries_subjects = [
         (
             entry.name,
@@ -84,12 +82,33 @@ def course(course_name):
         for entry in videos
     ]
 
-    print(entries_videos)
-
     return render_template("course.html", course_name=course_name, course_desc=course_desc, entries_videos=entries_videos)
 
-@app.get("/video/<course_name>/<video_num>")
+@app.route("/video/<course_name>/<video_num>", methods = ['POST', 'GET'])
 def video(course_name, video_num):
+
+    if request.method == "POST":
+
+        course_name = course_name
+        current_video_num = int(video_num)
+        movement = request.form['submit_paginate']
+
+        print (current_video_num)
+        print (type(current_video_num))
+
+
+        # naive pagination implementation
+        # proper pagination out of scope for this project
+        if (current_video_num == 1 and movement == 'previous'):
+            video_num = 1
+        elif (current_video_num == 1 and movement == 'next'):
+            video_num = 2
+        elif (current_video_num == 2 and movement == 'previous'):
+            video_num = 1
+        elif (current_video_num == 2 and movement == 'next'):
+            video_num = 2
+
+        return redirect(url_for('video', course_name=course_name, video_num=video_num))
 
     video = VideoModel.query.filter_by(course_name=course_name, video_num=video_num).first()
 
