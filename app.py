@@ -1,5 +1,4 @@
 from flask import Flask, render_template, request, redirect, url_for
-from flask_restful import Api
 from models.subject import SubjectModel
 from models.course import CourseModel
 from models.video import VideoModel
@@ -18,8 +17,6 @@ if uri.startswith("postgres://"):
 
 app.config['SQLALCHEMY_DATABASE_URI'] = uri
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-# app.secret_key = ''
-# api = Api(app)
 
 ## uncomment to add entries to db
 # db = SQLAlchemy(app)
@@ -92,10 +89,6 @@ def video(course_name, video_num):
         course_name = course_name
         current_video_num = int(video_num)
         movement = request.form['submit_paginate']
-
-        print (current_video_num)
-        print (type(current_video_num))
-
 
         # naive pagination implementation
         # proper pagination out of scope for this project

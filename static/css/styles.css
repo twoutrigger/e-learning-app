@@ -192,10 +192,6 @@ body {
   line-height: 150%;
 }
 
-.image__home {
-  max-width: 640px;
-}
-
 .image__thumbnail {
   max-height: 160px;
 }
@@ -205,8 +201,6 @@ body {
 }
 
 .footer {
-  /* position: absolute; */
-  /* bottom: 0; */
   background-color: #175466;
   padding: 24px 0;
   margin-top: 50px;

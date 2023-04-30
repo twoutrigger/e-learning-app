@@ -14,19 +14,7 @@ subject_3 = SubjectModel(name='Data Engineering',
                        desc='Data engineering courses',
                     )
 
-subject_1.save_to_db()
-subject_2.save_to_db()
-subject_3.save_to_db()
-
-# ERROR
-# RuntimeError: Working outside of application context.
-
-# This typically means that you attempted to use functionality that needed
-# the current application. To solve this, set up an application context
-# with app.app_context(). See the documentation for more information.
-
-
-# add courses; need to add relationship to Subject + update existing table
+# add courses
 course_1 = CourseModel(name='Looker',
                     desc='Looker courses',
                     subject_name = 'Business Intelligence',
@@ -51,14 +39,6 @@ course_6 = CourseModel(name='S3 Bucket',
                     desc='S3 Bucket courses',
                     subject_name = 'Data Engineering',
                     )
-
-course_1.save_to_db()
-course_2.save_to_db()
-course_3.save_to_db()
-course_4.save_to_db()
-course_5.save_to_db()
-course_6.save_to_db()
-
 
 # add videos
 video_1 = VideoModel(name='Looker Studio in a minute',
@@ -133,3 +113,11 @@ video_12 = VideoModel(name='All you need to know about encrypting AWS S3 buckets
                   video_num = 2,
                   url = 'https://www.youtube.com/embed/SHWcTPcp8As'
                   )
+
+
+# ERROR WHEN WRITING TO DB VIA FLASK SHELL:
+# RuntimeError: Working outside of application context.
+
+# This typically means that you attempted to use functionality that needed
+# the current application. To solve this, set up an application context
+# with app.app_context(). See the documentation for more information.
